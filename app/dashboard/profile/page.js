@@ -26,6 +26,7 @@ export default async function Profile () {
              <p className="text-center py-3 border-b border-blue-400"> {session?.user?.id} </p>
               <form 
               action={async()=> {
+                      "use server"
                     await signOut()
                     redirect("/auth/signin")
               }}>
