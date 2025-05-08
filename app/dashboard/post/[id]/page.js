@@ -17,7 +17,7 @@ async function fetchPost (postId) {
   };
 }
 export default async function Post({ params }) {
-       const { id } = params;
+       const { id } = await params;
        const post = await fetchPost(id);
 
        return (
@@ -27,12 +27,12 @@ export default async function Post({ params }) {
               <Image 
               src="/fn-2.webp"
               alt="postImage"
-              width={600}
-              height={600}
+              width={400}
+              height={400}
               className="rounded-lg"/>
              </div>
              <p className="text-gray-600 text-center mt-4">Published on: { timestampToDate(post.timecreated)} </p>
-             <article className="mt-8 text-lg text-gray-800 leading-relaxed max-w-4xl mx-auto">{post.body} </article>
+             <article className="mt-3 text-lg text-gray-800 leading-relaxed max-w-4xl mx-auto text-center px-10">{post.body} </article>
          </main>
        )
        
